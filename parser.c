@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "xml.h"
+#include "xml.c/src/xml.h"
 
 int main() {
     FILE * stream;
