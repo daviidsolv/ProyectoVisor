@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/davidsolv/Resilio Sync/CRAFO/uni/plataformas/ProyectoVisor'
+g++ visor.cpp tigr/tigr.c icons.c -Os -o visor -I../.. -framework OpenGL -framework Cocoa
+make: Leaving directory `/Users/davidsolv/Resilio Sync/CRAFO/uni/plataformas/ProyectoVisor'
+ 
