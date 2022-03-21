@@ -10,18 +10,18 @@ else
         endif
 endif
 
-visor: tigr.o parser.o xml.o icons.o visor.o
-	gcc -o visor visor.o tigr.o parser.o xml.o icons.o $(CFLAGS) $(LDFLAGS)
-parser.o: parser.c
-	gcc -c parser.c
+visorGUI: tigr.o GUIXML.o xml.o GUIICONS.o visorGUI.o
+	gcc -o visorGUI visorGUI.o tigr.o GUIXML.o xml.o GUIICONS.o $(CFLAGS) $(LDFLAGS)
+GUIXML.o: GUIXML.c
+	gcc -c GUIXML.c
 tigr.o: tigr\tigr.c tigr\tigr.h
 	gcc -c tigr\tigr.c
 xml.o: xml.c\src\xml.c
 	gcc -c xml.c/src/xml.c
-icons.o: icons.c
-	gcc -c icons.c
-visor.o: visor.c
-	gcc -c visor.c
+GUIICONS.o: GUIICONS.c
+	gcc -c GUIICONS.c
+visorGUI.o: visorGUI.c
+	gcc -c visorGUI.c
 
 clean:
-	del visor.exe visor.o tigr.o xml.o parser.o icons.o
+	del visorGUI.exe visorGUI.o tigr.o xml.o GUIXML.o GUIICONS.o

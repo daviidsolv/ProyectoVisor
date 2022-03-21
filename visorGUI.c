@@ -2,8 +2,8 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "./icons.h"
-#include "./parser.h"
+#include "GUIICONS.h"
+#include "GUIXML.h"
 
 #define MAX_ICONS 10
 
@@ -12,8 +12,11 @@ Tigr *backdrop, *screen;
 
 int main(int argc, char *argv[])
 {	
-	
-	readFile();
+	if(argc != 2) {
+		return -1;
+	}
+
+	readFile(argv[1]);
 
 	int totalIcons = GetTotalIcons();
 	printf("Number of icons in xml defined: %d \n", totalIcons);

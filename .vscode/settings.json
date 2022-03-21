@@ -2,6 +2,7 @@
     "makefile.extensionOutputFolder": "./.vscode",
     "cmake.configureOnOpen": true,
     "files.associations": {
-        "xml.h": "c"
+        "xml.h": "c",
+        "guiicons.h": "c"
     }
 }

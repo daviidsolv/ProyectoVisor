@@ -5,7 +5,7 @@ struct Icon {
     int posy;
 };
 
-int readFile();
+int readFile(char* filename);
 char* ReadNodeContent(int nodeIndex);
 char* ReadNodeAttribute(int index, int attrIndex);
 struct Icon ReadIcon(int index);

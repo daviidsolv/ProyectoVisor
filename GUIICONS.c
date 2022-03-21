@@ -1,5 +1,5 @@
 #include "tigr/tigr.h"
-#include "icons.h"
+#include "GUIICONS.h"
 
 void printIcon(Tigr *screen, char filename[], char iconName[], int x, int y) {
 
@@ -8,8 +8,8 @@ void printIcon(Tigr *screen, char filename[], char iconName[], int x, int y) {
 	if (!icono)
 		tigrError(0, "Cannot load icono");
     
-    tigrBlitAlpha(screen, icono, x*32, y*40, 0, 0, icono->w, icono->h, 1.0f);
-    tigrPrint(screen, tfont, (x*32), (y*40)+32, tigrRGB(0x00, 0x00, 0x00), iconName);
+    tigrBlitAlpha(screen, icono, x*40, y*40, 0, 0, icono->w, icono->h, 1.0f);
+    tigrPrint(screen, tfont, (x*40), (y*40)+32, tigrRGB(0x00, 0x00, 0x00), iconName);
 
     tigrFree(icono);
 }
