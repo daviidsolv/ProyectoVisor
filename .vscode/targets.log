@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Mon Mar 14 16:39:07 2022
+# Make data base, printed on Thu Mar 17 16:23:35 2022
 
 # Variables
 
@@ -32,33 +31,33 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile (from `makefile', line 1)
+# makefile (from `Makefile', line 1)
 CFLAGS = -I../..
-# makefile (from `makefile', line 1)
-MAKEFILE_LIST :=  makefile
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/kz/jm1p7pg11gl22cr1ff7nwfdw0000gn/T/vscode-ipc-d06d8349-a89b-4aac-9efb-6180d910e8f4.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/kz/jm1p7pg11gl22cr1ff7nwfdw0000gn/T/vscode-ipc-cb7f4c6c-01cc-4d91-8de7-4fbf7da03826.sock
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion Tech Preview.app/Contents/Public
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion Tech Preview.app/Contents/Public:/Library/Apple/usr/bin:Desktop/flutter/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
-# makefile (from `makefile', line 7)
+# makefile (from `Makefile', line 7)
 LDFLAGS = -framework OpenGL -framework Cocoa
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.T7QR9SH5XS/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.06chucDwfH/Listeners
 # automatic
 %F = $(notdir $%)
-# makefile (from `makefile', line 5)
+# makefile (from `Makefile', line 5)
 UNAME_S := Darwin
 # environment
 VSCODE_PIPE_LOGGING = true
@@ -71,7 +70,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/davidsolv
 # default
-MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
 VSCODE_CODE_CACHE_PATH = /Users/davidsolv/Library/Application Support/Code/CachedData/b5205cc8eb4fbaa726835538cd82372cc0222d43
 # environment
@@ -99,7 +98,7 @@ USER = davidsolv
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
-MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # default
 .VARIABLES := 
 # environment
@@ -139,7 +138,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 841
+VSCODE_PID = 873
 # variable set hash-table stats:
 # Load=64/1024=6%, Rehash=0, Collisions=1/91=1%
 
@@ -149,15 +148,21 @@ VSCODE_PID = 841
 
 # Directories
 
-# . (device 16777231, inode 922462): 13 files, no impossibilities.
+# . (device 16777230, inode 922462): 24 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
 # Files
+
+# Not a target:
+tigr\tigr.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 all:
@@ -168,14 +173,16 @@ all:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-# Not a target:
-icons.c:
+xml.o: xml.c\src\xml.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  commands to execute (from `Makefile', line 20):
+	gcc -c xml.c/src/xml.c
+	
 
 # Not a target:
-tigr/tigr.c:
+icons.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -187,20 +194,36 @@ tigr/tigr.c:
 #  File has not been updated.
 
 # Not a target:
-makefile:
+Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-03-12 16:11:01
+#  Last modified 2022-03-16 18:40:48
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-visor: visor.cpp tigr/tigr.c icons.c
+visor.o: visor.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 14):
-	g++ $^ -Os -o $@ $(CFLAGS) $(LDFLAGS)
+#  commands to execute (from `Makefile', line 24):
+	gcc -c visor.c
+	
+
+visor: tigr.o parser.o xml.o icons.o visor.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 14):
+	gcc -o visor visor.o tigr.o parser.o xml.o icons.o $(CFLAGS) $(LDFLAGS)
+	
+
+parser.o: parser.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 16):
+	gcc -c parser.c
 	
 
 # Not a target:
@@ -209,22 +232,56 @@ visor: visor.cpp tigr/tigr.c icons.c
 #  Modification time never checked.
 #  File has not been updated.
 
+tigr.o: tigr\tigr.c tigr\tigr.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 18):
+	gcc -c tigr\tigr.c
+	
+
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 17):
-	rm visor
+#  commands to execute (from `Makefile', line 27):
+	del visor visor.o tigr.o xml.o parser.o icons.o
 	
 
 # Not a target:
-visor.cpp:
+visor.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+icons.o: icons.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 22):
+	gcc -c icons.c
+	
+
+# Not a target:
+xml.c\src\xml.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+parser.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+tigr\tigr.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=9/1024=1%, Rehash=0, Collisions=0/24=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/40=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -236,7 +293,7 @@ visor.cpp:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Mar 14 16:39:07 2022
+# Finished Make data base on Thu Mar 17 16:23:35 2022
 
  
 make: *** No rule to make target `all'.  Stop.

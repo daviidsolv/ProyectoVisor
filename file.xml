@@ -1,0 +1,6 @@
+<Root>
+    <icon posx="0" posy="0" text="test icon">./icons/audio.png</icon>
+    <icon posx="0" posy="1" text="test icon2">./icons/internet.png</icon>
+    <icon posx="0" posy="2" text="test icon2">./icons/calculator.png</icon>
+    <icon posx="0" posy="3" text="test icon2">./icons/setup.png</icon>
+</Root>

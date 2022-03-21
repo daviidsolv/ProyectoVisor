@@ -1,5 +1,11 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/davidsolv/Resilio Sync/CRAFO/uni/plataformas/ProyectoVisor'
-g++ visor.cpp tigr/tigr.c icons.c -Os -o visor -I../.. -framework OpenGL -framework Cocoa
+gcc -c parser.c
+gcc -c icons.c
+gcc -c visor.c
 make: Leaving directory `/Users/davidsolv/Resilio Sync/CRAFO/uni/plataformas/ProyectoVisor'
+ 
+make: *** No rule to make target `tigr\tigr.c', needed by `tigr.o'.
+make: *** No rule to make target `tigr\tigr.h', needed by `tigr.o'.
+make: *** No rule to make target `xml.c\src\xml.c', needed by `xml.o'.
  
